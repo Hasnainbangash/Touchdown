@@ -38,6 +38,12 @@ struct ContentView: View {
                             LazyVGrid(columns: gridLayout, spacing: 15) {
                                 ForEach(products) { product in
                                     ProductItemView(product: product)
+                                        .onTapGesture {
+                                            withAnimation(.easeOut) {
+                                                shop.selectedProduct = product
+                                                shop.showingProduct = true
+                                            }
+                                        }
                                 } //: Loop
                             } //: GRID
                             .padding(15)
