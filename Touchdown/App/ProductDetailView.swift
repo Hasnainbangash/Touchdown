@@ -15,14 +15,27 @@ struct ProductDetailView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
             // NAVBAR
+            
             // HEADER
+            Text(sampleProduct.name)
+            
             // DETAIL TOP PART
             // DETAIL BOTTOM PART
             // RATINGS + SIZES
             // DESCRIPTIONS
             // QUANTITY + FAVOURITE
             // ADD TO CART
+            Spacer()
         } //: VSTACK
+        .ignoresSafeArea(.all, edges: .all)
+        .background(
+            Color(
+                red: sampleProduct.red,
+                green: sampleProduct.green,
+                blue: sampleProduct.blue
+            )
+            .ignoresSafeArea(.all, edges: .all)
+        )
     }
 }
 
