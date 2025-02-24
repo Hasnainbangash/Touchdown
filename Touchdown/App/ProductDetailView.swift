@@ -26,6 +26,8 @@ struct ProductDetailView: View {
             // DETAIL TOP PART
             TopPartDetailView()
                 .padding(.horizontal)
+                // This higher zIndex value will move this part above the others
+                .zIndex(1)
             
             // DETAIL BOTTOM PART
             VStack(alignment: .center, spacing: 0) {
@@ -45,9 +47,13 @@ struct ProductDetailView: View {
                 Spacer()
             } //: VSTACK
             .padding(.horizontal)
-            .background(Color.white)
-            
+            .background(
+                Color.white
+                    .clipShape(CustomShape())
+                    .padding(.top, -105)
+            )
         } //: VSTACK
+        .zIndex(0)
         .ignoresSafeArea(.all, edges: .all)
         .background(
             Color(
